@@ -1,12 +1,12 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
-
 public class BLocation {
+    private let locationManager: LocationManager
+
     public init() {
+        locationManager = .shared
         print("BLocation succesfully started!")
     }
 
-    func testFormatter() {
-        if 5 == 4 {}
+    public func requestLocationPermission() {
+        locationManager.requestLocationPermission()
     }
 }

@@ -12,8 +12,6 @@
 		1ABA92EA2BC9BED600AA241C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ABA92E92BC9BED600AA241C /* Assets.xcassets */; };
 		1ABA92ED2BC9BED600AA241C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ABA92EC2BC9BED600AA241C /* Preview Assets.xcassets */; };
 		1ABA92F72BC9BED700AA241C /* BLocationExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA92F62BC9BED700AA241C /* BLocationExampleTests.swift */; };
-		1ABA93012BC9BED700AA241C /* BLocationExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA93002BC9BED700AA241C /* BLocationExampleUITests.swift */; };
-		1ABA93032BC9BED700AA241C /* BLocationExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA93022BC9BED700AA241C /* BLocationExampleUITestsLaunchTests.swift */; };
 		1ACF56B72BC9CD7600ED88B2 /* BLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 1ACF56B62BC9CD7600ED88B2 /* BLocation */; };
 /* End PBXBuildFile section */
 
@@ -43,8 +41,6 @@
 		1ABA92F22BC9BED700AA241C /* BLocationExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLocationExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABA92F62BC9BED700AA241C /* BLocationExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLocationExampleTests.swift; sourceTree = "<group>"; };
 		1ABA92FC2BC9BED700AA241C /* BLocationExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLocationExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1ABA93002BC9BED700AA241C /* BLocationExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLocationExampleUITests.swift; sourceTree = "<group>"; };
-		1ABA93022BC9BED700AA241C /* BLocationExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLocationExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1ABA930F2BC9C20700AA241C /* BLocation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BLocation; path = ../..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,7 +75,6 @@
 			children = (
 				1ABA92E42BC9BED400AA241C /* BLocationExample */,
 				1ABA92F52BC9BED700AA241C /* BLocationExampleTests */,
-				1ABA92FF2BC9BED700AA241C /* BLocationExampleUITests */,
 				1ABA92E32BC9BED400AA241C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,15 +115,6 @@
 				1ABA92F62BC9BED700AA241C /* BLocationExampleTests.swift */,
 			);
 			path = BLocationExampleTests;
-			sourceTree = "<group>";
-		};
-		1ABA92FF2BC9BED700AA241C /* BLocationExampleUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1ABA93002BC9BED700AA241C /* BLocationExampleUITests.swift */,
-				1ABA93022BC9BED700AA241C /* BLocationExampleUITestsLaunchTests.swift */,
-			);
-			path = BLocationExampleUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,8 +293,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ABA93012BC9BED700AA241C /* BLocationExampleUITests.swift in Sources */,
-				1ABA93032BC9BED700AA241C /* BLocationExampleUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +442,8 @@
 				DEVELOPMENT_TEAM = B4Q34X3MCH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "\"Please, give us access.\"";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"Please\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -488,6 +474,8 @@
 				DEVELOPMENT_TEAM = B4Q34X3MCH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "\"Please, give us access.\"";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"Please\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

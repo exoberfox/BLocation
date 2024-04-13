@@ -8,18 +8,20 @@
 import BLocation
 import SwiftUI
 
+struct ContentModel {
+    var blocation = BLocation()
+}
+
 struct ContentView: View {
+    var model = ContentModel()
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.blue)
-            Text("Hello, world!")
+            Button("Request location permission") {
+                model.blocation.requestLocationPermission()
+            }
         }
         .padding()
-        .task {
-            _ = BLocation()
-        }
     }
 }
 
