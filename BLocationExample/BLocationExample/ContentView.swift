@@ -8,25 +8,25 @@
 import BLocation
 import SwiftUI
 
-struct ContentModel {
-    var blocation = BLocation(Secrets.apiKey)
-}
-
 struct ContentView: View {
-    var model = ContentModel()
+    @StateObject
+    var model = BLocationAdapter()
 
     var body: some View {
         VStack {
+            Text(model.state.rawValue)
+
+            BButton(title: "Setup sdk") {
+                model.setup()
+            }
+
             BButton(title: "Start location updates") {
-                Task {
-                    try? await model.blocation.startUpdatingLocation()
-                }
+                model.start()
             }
 
             BButton(title: "Stop location updates") {
-                model.blocation.stopUpdatingLocation()
+                model.stop()
             }
-            .padding(3)
         }
         .padding()
     }

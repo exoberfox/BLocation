@@ -2,11 +2,18 @@
 import XCTest
 
 final class BLocationTests: XCTestCase {
-    func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
+    func testDateFormatter() throws {
+        // given
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = .withFractionalSeconds
+//        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.sss'Z'"
 
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
+        let dateRef = "2024-04-13T21:34:44.643Z"
+
+        // when
+        let date = formatter.date(from: dateRef)
+
+        // then
+        XCTAssertNotNil(date)
     }
 }

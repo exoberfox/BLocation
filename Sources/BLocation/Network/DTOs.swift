@@ -1,13 +1,21 @@
 import Foundation
 
-struct AuthResponseDTO: Decodable {
-    var accessToken: String
-    var expiresAt: Date
-    var refreshToken: String
+// MARK: - Request
+
+struct LocationReportDTO: Encodable {
+    let latitude: Double
+    let longitude: Double
 }
 
+// MARK: - Response
+
+struct AuthResponseDTO: Decodable {
+    let accessToken: String
+    let expiresAt: Date
+    let refreshToken: String
+}
 
 struct RefreshResponseDTO: Decodable {
-    var accessToken: String
-    var expiresAt: Date
+    let accessToken: String
+    let expiresAt: Date
 }

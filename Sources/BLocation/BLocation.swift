@@ -1,16 +1,66 @@
+import Combine
+import CoreLocation
+
+public enum BLocationError: Error {
+    case setupSkippedOrFailed
+}
+
+public protocol BLocationSubscriptionDelegate: AnyObject {
+    func subscribtionCancelled()
+}
+
 public class BLocation {
     private let locationManager: LocationManager
+    private var locationApi: LocationApi?
 
-    public init(_: String) {
+    private weak var delegate: BLocationSubscriptionDelegate?
+    private var subscription: Cancellable?
+
+    public init() {
         locationManager = .shared
-        print("BLocation succesfully started!")
+        print("BLocation succesfully instantiated!")
     }
 
-    public func startUpdatingLocation() async throws {
+    public func setup(_ apiKey: String) async throws {
+        let apiClient = ApiClient(apiKey: apiKey)
+        try await apiClient.auth()
+
+        locationApi = LocationApi(apiClient: apiClient)
+    }
+
+    public func startUpdatingLocation(_ delegate: BLocationSubscriptionDelegate) async throws {
+        guard locationApi != nil else {
+            throw BLocationError.setupSkippedOrFailed
+        }
         try await locationManager.startUpdatingLocation()
+
+        self.delegate = delegate
+        subscription = locationManager
+            .$cordinates
+            .dropFirst()
+            .compactMap { $0 }
+            .sink { [weak self] coordinate in
+                self?.report(coordinate)
+            }
     }
 
     public func stopUpdatingLocation() {
         locationManager.stopUpdatingLocation()
+        subscription?.cancel()
+        subscription = nil
+
+        delegate?.subscribtionCancelled()
+    }
+
+    // MARK: - Private
+
+    private func report(_ coordinate: CLLocationCoordinate2D) {
+        Task {
+            do {
+                try await locationApi?.report(coordinate)
+            } catch {
+                stopUpdatingLocation()
+            }
+        }
     }
 }

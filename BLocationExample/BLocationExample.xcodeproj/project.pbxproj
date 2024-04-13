@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A3923892BCB2590004E9774 /* BLocationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3923882BCB2590004E9774 /* BLocationAdapter.swift */; };
 		1ABA92E62BC9BED400AA241C /* BLocationExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA92E52BC9BED400AA241C /* BLocationExampleApp.swift */; };
 		1ABA92E82BC9BED400AA241C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA92E72BC9BED400AA241C /* ContentView.swift */; };
 		1ABA92EA2BC9BED600AA241C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ABA92E92BC9BED600AA241C /* Assets.xcassets */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A3923882BCB2590004E9774 /* BLocationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLocationAdapter.swift; sourceTree = "<group>"; };
+		1A39238B2BCB293E004E9774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1ABA92E22BC9BED400AA241C /* BLocationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLocationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABA92E52BC9BED400AA241C /* BLocationExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLocationExampleApp.swift; sourceTree = "<group>"; };
 		1ABA92E72BC9BED400AA241C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,7 +95,9 @@
 		1ABA92E42BC9BED400AA241C /* BLocationExample */ = {
 			isa = PBXGroup;
 			children = (
+				1A39238B2BCB293E004E9774 /* Info.plist */,
 				1ABA930F2BC9C20700AA241C /* BLocation */,
+				1A3923882BCB2590004E9774 /* BLocationAdapter.swift */,
 				1ABA92E52BC9BED400AA241C /* BLocationExampleApp.swift */,
 				1ABA92E72BC9BED400AA241C /* ContentView.swift */,
 				1ABA92E92BC9BED600AA241C /* Assets.xcassets */,
@@ -278,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A3923892BCB2590004E9774 /* BLocationAdapter.swift in Sources */,
 				1ABA92E82BC9BED400AA241C /* ContentView.swift in Sources */,
 				1ABA92E62BC9BED400AA241C /* BLocationExampleApp.swift in Sources */,
 			);
@@ -448,6 +454,7 @@
 				DEVELOPMENT_TEAM = B4Q34X3MCH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BLocationExample/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "\"Please, give us access.\"";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"Please\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -480,6 +487,7 @@
 				DEVELOPMENT_TEAM = B4Q34X3MCH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BLocationExample/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "\"Please, give us access.\"";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"Please\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
