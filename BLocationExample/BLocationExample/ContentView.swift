@@ -27,6 +27,10 @@ struct ContentView: View {
             BButton(title: "Stop location updates") {
                 model.stop()
             }
+
+            BButton(title: "Report current location") {
+                model.reportCurrentLocation()
+            }
         }
         .padding()
     }

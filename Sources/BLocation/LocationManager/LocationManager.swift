@@ -4,6 +4,7 @@ import Foundation
 
 enum LocationManagerError: Error {
     case permissionProblems // May be more specified
+    case noLocationRetrieved
 }
 
 class LocationManager: NSObject, ObservableObject {
@@ -38,6 +39,14 @@ class LocationManager: NSObject, ObservableObject {
         locationManager.stopUpdatingLocation()
     }
 
+    func requestCurrentLocation() async throws -> CLLocationCoordinate2D {
+        try await requestPermissionIfNeeded()
+        guard let coordinate = locationManager.location?.coordinate else {
+            throw LocationManagerError.noLocationRetrieved
+        }
+        return coordinate
+    }
+
     // MARK: - Private
 
     private func requestPermissionIfNeeded() async throws {
@@ -67,6 +76,7 @@ extension LocationManager: CLLocationManagerDelegate {
             continuation?.resume(throwing: LocationManagerError.permissionProblems)
             return
         }
+        continuation?.resume()
     }
 
     func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

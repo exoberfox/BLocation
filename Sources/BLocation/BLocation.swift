@@ -52,6 +52,14 @@ public class BLocation {
         delegate?.subscribtionCancelled()
     }
 
+    public func reportCurrentLocation() async throws {
+        guard let locationApi else {
+            throw BLocationError.setupSkippedOrFailed
+        }
+        let coordinate = try await locationManager.requestCurrentLocation()
+        try await locationApi.report(coordinate)
+    }
+
     // MARK: - Private
 
     private func report(_ coordinate: CLLocationCoordinate2D) {

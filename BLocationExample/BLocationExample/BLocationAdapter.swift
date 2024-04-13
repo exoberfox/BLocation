@@ -48,6 +48,16 @@ class BLocationAdapter: ObservableObject {
     func stop() {
         blocation.stopUpdatingLocation()
     }
+
+    func reportCurrentLocation() {
+        Task {
+            do {
+                try await blocation.reportCurrentLocation()
+            } catch {
+                print("No location reported", error)
+            }
+        }
+    }
 }
 
 extension BLocationAdapter: BLocationSubscriptionDelegate {
