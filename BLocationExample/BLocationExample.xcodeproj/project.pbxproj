@@ -132,6 +132,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1ABDBB392BCACCF200B612FB /* PBXTargetDependency */,
 			);
 			name = BLocationExample;
 			packageProductDependencies = (
@@ -211,6 +212,7 @@
 			mainGroup = 1ABA92D92BC9BED400AA241C;
 			packageReferences = (
 				1ACF56B52BC9CC8600ED88B2 /* XCLocalSwiftPackageReference ".." */,
+				1ABDBB352BCACC2D00B612FB /* XCRemoteSwiftPackageReference "SecretsManager" */,
 			);
 			productRefGroup = 1ABA92E32BC9BED400AA241C /* Products */;
 			projectDirPath = "";
@@ -308,6 +310,10 @@
 			isa = PBXTargetDependency;
 			target = 1ABA92E12BC9BED400AA241C /* BLocationExample */;
 			targetProxy = 1ABA92FD2BC9BED700AA241C /* PBXContainerItemProxy */;
+		};
+		1ABDBB392BCACCF200B612FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 1ABDBB382BCACCF200B612FB /* SecretsManagerPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -619,7 +625,23 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		1ABDBB352BCACC2D00B612FB /* XCRemoteSwiftPackageReference "SecretsManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vdka/SecretsManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		1ABDBB382BCACCF200B612FB /* SecretsManagerPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1ABDBB352BCACC2D00B612FB /* XCRemoteSwiftPackageReference "SecretsManager" */;
+			productName = "plugin:SecretsManagerPlugin";
+		};
 		1ACF56B62BC9CD7600ED88B2 /* BLocation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BLocation;

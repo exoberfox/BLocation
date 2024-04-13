@@ -1,7 +1,7 @@
 public class BLocation {
     private let locationManager: LocationManager
 
-    public init() {
+    public init(_: String) {
         locationManager = .shared
         print("BLocation succesfully started!")
     }
