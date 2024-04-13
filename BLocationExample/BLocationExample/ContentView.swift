@@ -5,6 +5,7 @@
 //  Created by Михаил Черников on 12.04.2024.
 //
 
+import BLocation
 import SwiftUI
 
 struct ContentView: View {
@@ -12,10 +13,13 @@ struct ContentView: View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
-                .foregroundStyle(.tint)
+                .foregroundColor(.blue)
             Text("Hello, world!")
         }
         .padding()
+        .task {
+            _ = BLocation()
+        }
     }
 }
 

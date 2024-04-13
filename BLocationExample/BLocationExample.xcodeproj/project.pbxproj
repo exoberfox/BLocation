@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		1ABA92F72BC9BED700AA241C /* BLocationExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA92F62BC9BED700AA241C /* BLocationExampleTests.swift */; };
 		1ABA93012BC9BED700AA241C /* BLocationExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA93002BC9BED700AA241C /* BLocationExampleUITests.swift */; };
 		1ABA93032BC9BED700AA241C /* BLocationExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA93022BC9BED700AA241C /* BLocationExampleUITestsLaunchTests.swift */; };
+		1ACF56B72BC9CD7600ED88B2 /* BLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 1ACF56B62BC9CD7600ED88B2 /* BLocation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		1ABA92FC2BC9BED700AA241C /* BLocationExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLocationExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABA93002BC9BED700AA241C /* BLocationExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLocationExampleUITests.swift; sourceTree = "<group>"; };
 		1ABA93022BC9BED700AA241C /* BLocationExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLocationExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1ABA930F2BC9C20700AA241C /* BLocation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BLocation; path = ../..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ACF56B72BC9CD7600ED88B2 /* BLocation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +97,7 @@
 		1ABA92E42BC9BED400AA241C /* BLocationExample */ = {
 			isa = PBXGroup;
 			children = (
+				1ABA930F2BC9C20700AA241C /* BLocation */,
 				1ABA92E52BC9BED400AA241C /* BLocationExampleApp.swift */,
 				1ABA92E72BC9BED400AA241C /* ContentView.swift */,
 				1ABA92E92BC9BED600AA241C /* Assets.xcassets */,
@@ -134,6 +138,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1ABA93062BC9BED700AA241C /* Build configuration list for PBXNativeTarget "BLocationExample" */;
 			buildPhases = (
+				1ACF56C62BCA99A100ED88B2 /* SwiftFormat */,
 				1ABA92DE2BC9BED400AA241C /* Sources */,
 				1ABA92DF2BC9BED400AA241C /* Frameworks */,
 				1ABA92E02BC9BED400AA241C /* Resources */,
@@ -143,6 +148,9 @@
 			dependencies = (
 			);
 			name = BLocationExample;
+			packageProductDependencies = (
+				1ACF56B62BC9CD7600ED88B2 /* BLocation */,
+			);
 			productName = BLocationExample;
 			productReference = 1ABA92E22BC9BED400AA241C /* BLocationExample.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +223,9 @@
 				Base,
 			);
 			mainGroup = 1ABA92D92BC9BED400AA241C;
+			packageReferences = (
+				1ACF56B52BC9CC8600ED88B2 /* XCLocalSwiftPackageReference ".." */,
+			);
 			productRefGroup = 1ABA92E32BC9BED400AA241C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -251,6 +262,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1ACF56C62BCA99A100ED88B2 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd BuildTools\nSDKROOT=(xcrun --sdk macosx --show-sdk-path)\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat \"$SRCROOT/..\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1ABA92DE2BC9BED400AA241C /* Sources */ = {
@@ -332,7 +365,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -395,7 +428,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -430,6 +463,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +493,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,6 +623,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		1ACF56B52BC9CC8600ED88B2 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1ACF56B62BC9CD7600ED88B2 /* BLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BLocation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1ABA92DA2BC9BED400AA241C /* Project object */;
 }

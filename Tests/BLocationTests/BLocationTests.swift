@@ -1,5 +1,5 @@
-import XCTest
 @testable import BLocation
+import XCTest
 
 final class BLocationTests: XCTestCase {
     func testExample() throws {
