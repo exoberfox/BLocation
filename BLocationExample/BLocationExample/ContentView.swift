@@ -17,8 +17,10 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            Button("Request location permission") {
-                model.blocation.requestLocationPermission()
+            Button("Start location updates") {
+                Task {
+                    try? await model.blocation.startUpdatingLocation()
+                }
             }
         }
         .padding()
