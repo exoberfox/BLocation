@@ -61,7 +61,7 @@ class BLocationAdapter: ObservableObject {
 }
 
 extension BLocationAdapter: BLocationSubscriptionDelegate {
-    func subscribtionCancelled() {
+    func subscriptionCancelled() {
         Task { @MainActor in
             self.state = .reportingStopped
         }

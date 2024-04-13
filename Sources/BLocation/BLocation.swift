@@ -6,7 +6,7 @@ public enum BLocationError: Error {
 }
 
 public protocol BLocationSubscriptionDelegate: AnyObject {
-    func subscribtionCancelled()
+    func subscriptionCancelled()
 }
 
 public class BLocation {
@@ -49,7 +49,7 @@ public class BLocation {
         subscription?.cancel()
         subscription = nil
 
-        delegate?.subscribtionCancelled()
+        delegate?.subscriptionCancelled()
     }
 
     public func reportCurrentLocation() async throws {
